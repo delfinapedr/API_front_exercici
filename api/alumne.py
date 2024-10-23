@@ -1,13 +1,11 @@
-def alumne_schema(student) -> dict:
+def alumne_schema(fetchAlumnes):
     return {
-        "IdAlumne": student[0],
-        "IdAula": student[1],
-        "NomAlumne": student[2],
-        "Cicle": student[3],
-        "Curs": student[4],
-        "Grup": student[5],
-        "DescAula": student[6]
+        
+        "NomAlumne": str(fetchAlumnes[0]),  
+        "Cicle": str(fetchAlumnes[1]),
+        "Curs": str(fetchAlumnes[2]),
+        "Grup": str(fetchAlumnes[3]),
+        "DescAula": str(fetchAlumnes[4])
     }
-
 def alumnes_schema(alumnes) -> list:
     return [alumne_schema(alumne) for alumne in alumnes]

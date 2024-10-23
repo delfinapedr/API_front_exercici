@@ -5,17 +5,16 @@ def read_alumnes():
         conn = db_client()
         cur = conn.cursor()
 
-        query = "SELECT alumne.nomAlumne, alumne.cicle, alumne.curs, alumne.grup, aula.descAula from alumne JOIN aula ON alumne.IdAula = aula.IdAula ;"
+        query = "SELECT alumne.nomAlumne, alumne.cicle, alumne.curs, alumne.grup, aula.descAula FROM alumne JOIN aula ON alumne.IdAula = aula.IdAula ;"
         cur.execute(query)
         alumnes = cur.fetchall()
-
-        return alumnes
 
     except Exception as e:
         return {"status": -1, "message": f"Error fetching data: {e}"}
 
     finally:
         conn.close()
+        return alumnes
 
 def read_alumne_by_id(id):
     try:

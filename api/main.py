@@ -26,8 +26,8 @@ class AlumneModel(BaseModel):
 class tablaAlumne(BaseModel):
     NomAlumne: str
     Cicle: str
-    Curs: int
-    Grup: int
+    Curs: str
+    Grup: str
     DescAula: str
 
 
